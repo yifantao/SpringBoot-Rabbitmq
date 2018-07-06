@@ -11,6 +11,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
  **/
 public interface IRabbitmqService extends RabbitTemplate.ConfirmCallback {
 
-    void send(Object message, ExchangeEnum exchangeEnum, QueueEnum queueEnum);
+    void send(Object message, ExchangeEnum exchangeEnum, String routeKey);
 
 }

@@ -1,6 +1,5 @@
 package indi.yftao.rabbitmqcommon.constant;
 
-import lombok.Data;
 import lombok.Getter;
 
 /**

@@ -6,6 +6,8 @@ import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableRabbit
+@ComponentScan( "indi.yftao")
 public class RabbitmqProviderApplication {
 
     @Autowired
@@ -24,7 +27,7 @@ public class RabbitmqProviderApplication {
 
     @RequestMapping("/send")
     public String send(@RequestParam String msg) {
-        rabbitmqService.send(msg,ExchangeEnum.TEST_EXCHANGE,QueueEnum.TEST_QUEUE);
+        rabbitmqService.send(msg,ExchangeEnum.TEST_EXCHANGE,"key.test");
         return "ok";
     }
 }

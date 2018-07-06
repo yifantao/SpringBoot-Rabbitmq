@@ -32,9 +32,9 @@ public class RabbitmqServiceImpl implements IRabbitmqService {
     }
 
     @Override
-    public void send(Object message, ExchangeEnum exchangeEnum, QueueEnum queueEnum) {
+    public void send(Object message, ExchangeEnum exchangeEnum, String routingKey) {
         rabbitTemplate.setConfirmCallback(this);
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
-        rabbitTemplate.convertAndSend(exchangeEnum.getValue(), queueEnum.getRoutingKey(), message, correlationData);
+        rabbitTemplate.convertAndSend(exchangeEnum.getValue(),routingKey, message, correlationData);
     }
 }

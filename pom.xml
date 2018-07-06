@@ -60,6 +60,7 @@
     <modules>
         <module>rabbitmq-common</module>
         <module>rabbitmq-consumer</module>
+        <module>rabbitmq-consumer-manual</module>
         <module>rabbitmq-provider</module>
     </modules>
 
