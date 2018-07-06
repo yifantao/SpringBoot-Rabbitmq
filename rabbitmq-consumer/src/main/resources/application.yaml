@@ -1,6 +1,6 @@
 spring:
   application:
-    name: rabbitmq-consumer
+    name: rabbitmq-consumer1
   rabbitmq:
     username: guest
     password: guest
@@ -10,4 +10,4 @@ spring:
     virtual-host: /
 
 server:
-  port: 8003
+  port: 8004
